@@ -1,0 +1,11 @@
+# Python-related files
+*.pyc
+__pycache__/
+
+# Virtual environment
+venv/
+myvenv/
+
+# Flask-related files
+instance/
+.env

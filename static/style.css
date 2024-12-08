@@ -1,0 +1,131 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Header Styling */
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #57068c;
+    font-size: 2.5rem;
+}
+
+.again {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    color: #57068c;
+    font-size: 2rem;
+    margin-top: 10px;
+}
+
+/* Form Container */
+form {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #57068c;
+}
+
+/* Question Section */
+.question {
+    margin-bottom: 20px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.question:last-child {
+    border-bottom: none;
+}
+
+.question p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Radio Button Styling */
+label {
+    display: block;
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* Submit Button */
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #57068c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45046e;
+}
+
+/* Result Page Link */
+a {
+    display: inline-block;
+    text-align: center;
+    margin-top: 20px;
+    color: #57068c;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #45046e;
+}
+
+/* Result Page Paragraph */
+p {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 20px;
+    color: #333;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    form {
+        width: 90%;
+    }
+
+    button {
+        font-size: 1rem;
+    }
+
+    label {
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Personality Quiz</title>
+        <link rel="stylesheet" href="static/style.css" />
+    </head>
+    <body>
+        <h1>GPS Personality Quiz</h1>
+        <h2>Which GPS character fits you the best?</h2>
+        <form method="POST">
+            {% for i, question in questions %}
+            <div class="question">
+                <p>{{ question.question }}</p>
+                <label
+                    ><input type="radio" name="q{{ i }}" value="5" required />
+                    Strongly Agree</label
+                >
+                <label
+                    ><input type="radio" name="q{{ i }}" value="4" />
+                    Agree</label
+                >
+                <label
+                    ><input type="radio" name="q{{ i }}" value="3" />
+                    Neutral</label
+                >
+                <label
+                    ><input type="radio" name="q{{ i }}" value="2" />
+                    Disagree</label
+                >
+                <label
+                    ><input type="radio" name="q{{ i }}" value="1" /> Strongly
+                    Disagree</label
+                >
+            </div>
+            {% endfor %}
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>
