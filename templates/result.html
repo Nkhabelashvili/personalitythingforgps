@@ -11,14 +11,23 @@
     </head>
     <body>
         <h1>Your Personality Quiz Result</h1>
-        <h2>Your Personality: {{ personality }}</h2>
-        <p>{{ description }}</p>
+        <div class="result">
+            <h2>{{ description['name'] }}</h2>
+            <img
+                src="{{ url_for('static', filename=description['image']) }}"
+                alt="{{ description['name'] }}"
+                class="character-image"
+            />
+            <p>{{ description['description'] }}</p>
+        </div>
         <a
             style="
                 display: flex;
                 justify-content: center;
                 text-decoration: none;
                 color: #57068c;
+                margin-top: 20px;
+                font-size: 1.2rem;
             "
             href="/"
             >Take the quiz again</a

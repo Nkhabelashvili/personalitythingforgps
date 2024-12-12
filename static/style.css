@@ -16,10 +16,6 @@ h1 {
     font-size: 2.5rem;
 }
 
-.again {
-    text-align: center;
-}
-
 h2 {
     text-align: center;
     color: #57068c;
@@ -93,6 +89,23 @@ a {
     text-decoration: none;
     font-size: 1.2rem;
     transition: color 0.3s ease;
+}
+
+.character-image {
+    width: 300px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.result {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #57068c;
+    border-radius: 10px;
+    background-color: #f9f9f9;
 }
 
 a:hover {
