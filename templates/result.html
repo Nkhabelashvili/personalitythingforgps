@@ -13,11 +13,7 @@
         <h1>Your Personality Quiz Result</h1>
         <div class="result">
             <h2>{{ description['name'] }}</h2>
-            <img
-                src="{{ url_for('static', filename=description['image']) }}"
-                alt="{{ description['name'] }}"
-                class="character-image"
-            />
+
             <p>{{ description['description'] }}</p>
         </div>
         <a

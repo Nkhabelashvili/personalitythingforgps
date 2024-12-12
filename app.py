@@ -31,47 +31,47 @@ personalities = {
     "INTJ": {
         "name": "A.M. Turing",
         "description": "Turing was methodical, focused on his goal, and saw the world through a highly analytical lens by asking questions such as 'Can machines think? I believe to be too meaningless to deserve discussion' (Turing 126); 'Is this feeling illusory?' (Turing 129); 'Instead of trying to produce a programme to simulate the adult mind, why not rather try to produce one which stimulates the child’s?' (Turing 140). His work in computing and theoretical science reflects the INTJ's long-term planning and focus on systems.",
-        "image": "assets/turing.png"
+    #    "image": "assets/turing.png"
     },
     "ENTJ": {
         "name": "Wang Xifeng",
         "description": "In The Story of The Stone by Cao Xueqin, Wang Xifeng is known for her wit and intelligence, her vivacious manner, her great beauty, her multiple-faced personality, and her fierce sense of fidelity. By pleasing and flattering Grandmother Jia, Xifeng becomes influential and rules the entire household. Even in the first chapters, Grandmother Jia says 'You don’t know her, she’s a holy terror this one' (Cao Xueqin 188). Her traits become more multifaceted, showing her kind-heartedness toward the poor but also her cruelty. Wang Xifeng's assertion of authority reflects the ENTJs strong leadership and need for control.",
-        "image": "assets/xifeng.png"
+    #    "image": "assets/xifeng.png"
     },
     "INTP": {
         "name": "Michel Foucault",
         "description": "As a philosopher who questioned societal structures and norms, Foucault embodies intellectual curiosity and critical thinking. His theoretical work in analyzing power structures exemplifies the focus on abstract ideas. In The Great Confinement, he argues 'In this sense, confinement conceals both a metaphysics of government and a politics of religion... police conceived of itself as the civil equivalent of religion for the identification of a perfect city' (Foucault 389). His eagerness to explore the dynamics of power and resistance fits the INTP's critical, abstract thinking.",
-        "image": "assets/foc.png"
+    #    "image": "assets/foc.png"
     },
     "ENTP": {
         "name": "Kang Youwei",
         "description": "As a reformist and thinker, Kang Youwei constantly challenged traditions and proposed new ideas. In The Turk Travelogue, he critiques and compares Turkey’s culture, history, and society with China's modernization path: 'The degeneration of our country and the belittlement of both Turkey and our country by others arise from the fact that governance is lacking, there is no other reason' (Kang Youwei 251). His bold challenges to traditional systems embody the ENTP's drive for innovation.",
-        "image": "assets/Kang.png"
+    #    "image": "assets/Kang.png"
     },
     "INFJ": {
         "name": "Seneca",
         "description": "Seneca, with his Stoic philosophy, focused on personal growth and societal well-being. In Seneca’s Letters to Lucilius, he conveys practical Stoic philosophy, emphasizing the pursuit of virtue, self-discipline, and inner peace as the path to a meaningful life. 'Exhort yourself, toughen yourself, against such events as befall even the most powerful' (Seneca 311). His reflections on the brevity of life and introspection align with the INFJ’s quest for purpose.",
-        "image": "assets/Seneca.png"
+    #    "image": "assets/Seneca.png"
     },
     "ENFJ": {
         "name": "Tevye",
         "description": "In Chava by Sholem Aleichem, Tevye’s character is central as a devout and loving father, grappling with the tension between his religious convictions and his unconditional love for his daughter when she marries outside their faith. His sense of responsibility for his loved ones and community exemplifies compassionate leadership. 'When children cause you grief, you must count it as love' (Aleichem 267). Tevye’s ability to guide his family through difficult times reflects the ENFJ’s empathetic nature.",
-        "image": "assets/Tevye.png"
+    #    "image": "assets/Tevye.png"
     },
     "INFP": {
         "name": "Juliet",
         "description": "In Romeo and Juliet by Shakespeare, Juliet’s pursuit of love regardless of societal norms and her idealism about true love fit the INFP's values. For example: 'O, by this count I shall be much in years Ere I again behold my Romeo' (Shakespeare 478), 'Wash thy his wounds with tears? Mine shall be spent when theirs are dry, for Romeo’s banishment' (Shakespeare 468). Her deep emotional conflicts and pursuit of love reflect the INFP's authenticity.",
-        "image": "assets/Juliet.png"
+    #    "image": "assets/Juliet.png"
     },
     "ENFP": {
         "name": "Gyalo",
         "description": "Gyalo is a vibrant, passionate character who thrives on new ideas and social interaction. In Eight Sheep by Pema Tseden, even though he seems anxious due to a language barrier, he shows a lively, upbeat approach to life: 'The man’s shadow was almost identical to his, so Gyalo relaxed a little and smiled' (Tseden 288). His zest for life and drive to explore new possibilities align with the ENFP’s love for novelty and creativity.",
-        "image": "assets/Gyalo.png"
+    #    "image": "assets/Gyalo.png"
     },
     "ESTJ": {
         "name": "Thomas Hobbes",
         "description": "In Leviathan, Thomas Hobbes aims to justify the necessity of a strong, centralized authority to prevent the chaos and violence of the natural state of humanity, advocating for a social contract where individuals surrender certain freedoms in exchange for security and order. 'A Common-Wealth is said to be Instituted, when a Multitude of men do Agree, and Covenant... or Assembly of Men, shall be given by the major part, the Right to Present Person the Person of them all' (Hobbes 235). His focus on social order and societal structure aligns with the ESTJ's dedication to rules and stability.",
-        "image": "assets/Hobbes.png"
+    #    "image": "assets/Hobbes.png"
     },
     "ISTJ": {
         "name": "Mr. Yee",
