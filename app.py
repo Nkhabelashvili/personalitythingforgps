@@ -14,11 +14,11 @@ questions = [
     },
     {
         "question": "I am fascinated by societal structures and enjoy analyzing their hidden mechanisms.",
-        "weights": {"INTP": 3, "ISTP": 2, "INTJ": 1}
+        "weights": {"INTP": 3, "ENTP": 2, "INTJ": 1}
     },
     {
         "question": "I feel passionate about introducing innovative ideas to challenge traditional norms.",
-        "weights": {"ENTP": 3, "ISTP": 2, "ENTJ": 1}
+        "weights": {"ENTP": 3, "ENFP": 2, "ISTP": 1}
     },
     {
         "question": "I often reflect on ethical questions and strive to live according to my principles.",
@@ -26,7 +26,7 @@ questions = [
     },
     {
         "question": "I take great joy in guiding and protecting others, often putting their needs before my own.",
-        "weights": {"ENFJ": 3, "ESFJ": 2, "ISFJ": 1}
+        "weights": {"ISFJ": 3, "ESFJ": 2, "ENFJ": 1}
     },
     {
         "question": "I am driven by deep emotions and will pursue personal ideals at any cost.",
@@ -34,7 +34,7 @@ questions = [
     },
     {
         "question": "I feel energized by the idea of reforming and improving the world around me.",
-        "weights": {"ENFJ": 3, "INTJ": 2, "INFJ": 1}
+        "weights": {"ENFJ": 3, "ISTP": 2, "INFJ": 1}
     },
     {
         "question": "I prefer structure and believe a stable system is essential for progress.",
@@ -42,7 +42,7 @@ questions = [
     },
     {
         "question": "I approach challenges methodically, paying close attention to details.",
-        "weights": {"ISTJ": 3, "ISFJ": 2, "ISTP": 1}
+        "weights": {"ISTJ": 3, "ISTP": 2, "INTJ": 1}
     },
     {
         "question": "I am loyal and self-sacrificing, especially when it comes to my family and loved ones.",
@@ -54,11 +54,11 @@ questions = [
     },
     {
         "question": "I enjoy using creativity and innovation to reflect on and critique systems.",
-        "weights": {"ISTP": 3, "INTP": 2, "ENTP": 1}
+        "weights": {"INTP": 2, "ENTP": 2, "ESTP": 2}
     },
     {
         "question": "I thrive in adventurous pursuits and feel alive when taking calculated risks.",
-        "weights": {"ESTP": 3, "ISTP": 2, "ENTP": 1}
+        "weights": {"ESTP": 3, "ISTP": 2, "ESFP": 1}
     },
     {
         "question": "I value artistic expression and appreciate exploring different ways to express myself.",
@@ -66,23 +66,23 @@ questions = [
     },
     {
         "question": "I feel energized in social settings and enjoy engaging with diverse groups of people.",
-        "weights": {"ESFP": 3, "ENFP": 2, "ESTP": 1}
+        "weights": {"ESFP": 3, "ESTP": 2, "ENFP": 1}
     },
     {
         "question": "I enjoy exploring abstract concepts and theoretical possibilities.",
-        "weights": {"ENFP": 3, "INTP": 2, "ENTP": 1}
+        "weights": {"ENTP": 2, "INTP": 2, "INTJ": 2}
     },
     {
         "question": "I prefer taking a systematic and organized approach to achieving goals.",
-        "weights": {"ESTJ": 3, "ENTJ": 2, "ISTJ": 1}
+        "weights": {"ESTJ": 2, "ENTJ": 2, "ISTJ": 2}
     },
     {
         "question": "I naturally understand others' emotions and work to maintain peaceful relationships.",
-        "weights": {"INFJ": 3, "ENFP": 2, "ESFJ": 1}
+        "weights": {"INFJ": 2, "ESFJ": 2, "ENFP": 2}
     },
     {
         "question": "I enjoy spontaneous activities and making quick decisions based on immediate opportunities.",
-        "weights": {"ESTP": 3, "ESFP": 2, "ISFP": 1}
+        "weights": {"ESFP": 2, "ESTP": 2, "ISFP": 2}
     }
 ]
 
@@ -177,32 +177,50 @@ personalities = {
 def index():
     if request.method == "POST":
         # Initialize scores for all personality types
-        scores = {ptype: 0 for ptype in personalities.keys()}
+        scores = {ptype: {"total": 0, "appearances": 0} for ptype in personalities.keys()}
 
         try:
+            # Debug: Print all form data
+            print("Form data:", request.form)
+
             # Process answers and calculate scores
             for i, question in enumerate(questions):
-                answer = int(request.form.get(f"q{i}", 0))  # Get user's answer
+                answer = int(request.form.get(f"q{i}", 0))
+
+                # Validate answer is in correct range (1-5)
+                if not 1 <= answer <= 5:
+                    print(f"Invalid answer value for question {i}: {answer}")
+                    continue
+
+                # Convert 1-5 scale to 0-4 scale for calculations
+                normalized_answer = answer - 1
+
                 for ptype, weight in question["weights"].items():
-                    scores[ptype] += answer * weight  # Update score for each type
+                    scores[ptype]["total"] += normalized_answer * weight
+                    scores[ptype]["appearances"] += 1
 
-            # Debug: Print scores before finding the max
-            print("Scores before max():", scores)
+            # Debug: Print raw scores
+            print("Raw scores:", {k: v["total"] for k, v in scores.items()})
 
-            # Ensure scores are valid
-            if not scores or all(value == 0 for value in scores.values()):
-                return redirect(url_for("index"))  # Redirect back if no valid scores
+            # Normalize scores by number of appearances
+            normalized_scores = {}
+            for ptype, data in scores.items():
+                if data["appearances"] > 0:
+                    normalized_scores[ptype] = data["total"] / data["appearances"]
 
-            # Determine the highest-scoring personality type
-            result = max(scores, key=scores.get)
+            # Debug: Print normalized scores
+            print("Normalized scores:", normalized_scores)
+
+            # Find highest scoring type
+            result = max(normalized_scores.items(), key=lambda x: x[1])[0]
+            print("Selected result:", result)
 
             return redirect(url_for("result", personality=result))
 
         except Exception as e:
-            print(f"Error: {e}")
+            print(f"Error processing scores: {e}")
             return redirect(url_for("index"))
 
-    # Enumerate questions for rendering in the template
     enumerated_questions = list(enumerate(questions))
     return render_template("index.html", questions=enumerated_questions)
 
