@@ -4,27 +4,89 @@ app = Flask(__name__)
 
 # Questions with weights for each personality type
 questions = [
-    {"question": "I enjoy solving complex problems and creating precise systems to achieve my goals.", "weights": {"INTJ": 3, "ENTJ": 1, "ISTJ": 1}},
-    {"question": "I thrive in leadership roles where I can strategically manage people and resources.", "weights": {"ENTJ": 3, "INTJ": 1, "ESTJ": 1}},
-    {"question": "I am fascinated by societal structures and enjoy analyzing their hidden mechanisms.", "weights": {"INTP": 3, "INTJ": 1, "ENTP": 1}},
-    {"question": "I feel passionate about introducing innovative ideas to challenge traditional norms.", "weights": {"ENTP": 3, "INTP": 1, "ENFP": 1}},
-    {"question": "I often reflect on ethical questions and strive to live according to my principles.", "weights": {"INFJ": 3, "INFP": 1, "ENFJ": 1}},
-    {"question": "I take great joy in guiding and protecting others, often putting their needs before my own.", "weights": {"ENFJ": 3, "INFJ": 1, "ISFJ": 1}},
-    {"question": "I am driven by deep emotions and will pursue love or personal ideals at any cost.", "weights": {"INFP": 3, "INFJ": 1, "ENFP": 1}},
-    {"question": "I feel energized by the idea of reforming and improving the world around me.", "weights": {"ENFP": 3, "ENTP": 1, "INFP": 1}},
-    {"question": "I prefer structure and believe a stable system is essential for progress.", "weights": {"ESTJ": 3, "ISTJ": 1, "ENTJ": 1}},
-    {"question": "I approach challenges methodically, paying close attention to details.", "weights": {"ISTJ": 3, "ISFJ": 1, "INTJ": 1}},
-    {"question": "I am loyal and self-sacrificing, especially when it comes to my family and loved ones.", "weights": {"ISFJ": 3, "INFJ": 1, "ISTJ": 1}},
-    {"question": "I value harmony and strive to create an ideal environment where everyone thrives.", "weights": {"ESFJ": 3, "ENFJ": 1, "ISFJ": 1}},
-    {"question": "I enjoy using creativity and innovation to reflect on and critique societal issues.", "weights": {"ISTP": 3, "ISFP": 1, "INTP": 1}},
-    {"question": "I thrive in adventurous pursuits and feel alive when I am chasing bold challenges.", "weights": {"ESTP": 3, "ISTP": 1, "ENTP": 1}},
-    {"question": "I value freedom and appreciate exploring new places and ideas to express myself.", "weights": {"ISFP": 3, "INFP": 1, "ENFP": 1}},
-    {"question": "I feel energized in social settings and enjoy being the center of attention.", "weights": {"ESFP": 3, "ENFP": 1, "ESFJ": 1}},
-    {"question": "I feel most fulfilled when I have the freedom to explore new ideas and experiences.", "weights": {"ENFP": 2, "ENTP": 2, "ISFP": 1}},
-    {"question": "I prefer taking a logical and systematic approach to solving problems.", "weights": {"INTJ": 2, "ISTJ": 2, "ENTJ": 1}},
-    {"question": "I value close personal relationships and strive to maintain harmony in my interactions.", "weights": {"INFJ": 2, "ISFJ": 2, "ESFJ": 1}},
-    {"question": "I enjoy taking risks and exploring bold new opportunities.", "weights": {"ESTP": 2, "ENFP": 2, "ISFP": 1}}
+    {
+        "question": "I enjoy solving complex problems and creating precise systems to achieve my goals.",
+        "weights": {"INTJ": 3, "ISTJ": 2, "INTP": 1}
+    },
+    {
+        "question": "I thrive in leadership roles where I can strategically manage people and resources.",
+        "weights": {"ENTJ": 3, "ESTJ": 2, "ENFJ": 1}
+    },
+    {
+        "question": "I am fascinated by societal structures and enjoy analyzing their hidden mechanisms.",
+        "weights": {"INTP": 3, "ISTP": 2, "INTJ": 1}
+    },
+    {
+        "question": "I feel passionate about introducing innovative ideas to challenge traditional norms.",
+        "weights": {"ENTP": 3, "ISTP": 2, "ENTJ": 1}
+    },
+    {
+        "question": "I often reflect on ethical questions and strive to live according to my principles.",
+        "weights": {"INFJ": 3, "ISFJ": 2, "INFP": 1}
+    },
+    {
+        "question": "I take great joy in guiding and protecting others, often putting their needs before my own.",
+        "weights": {"ENFJ": 3, "ESFJ": 2, "ISFJ": 1}
+    },
+    {
+        "question": "I am driven by deep emotions and will pursue personal ideals at any cost.",
+        "weights": {"INFP": 3, "ISFP": 2, "ENFP": 1}
+    },
+    {
+        "question": "I feel energized by the idea of reforming and improving the world around me.",
+        "weights": {"ENFJ": 3, "INTJ": 2, "INFJ": 1}
+    },
+    {
+        "question": "I prefer structure and believe a stable system is essential for progress.",
+        "weights": {"ESTJ": 3, "ISTJ": 2, "ENTJ": 1}
+    },
+    {
+        "question": "I approach challenges methodically, paying close attention to details.",
+        "weights": {"ISTJ": 3, "ISFJ": 2, "ISTP": 1}
+    },
+    {
+        "question": "I am loyal and self-sacrificing, especially when it comes to my family and loved ones.",
+        "weights": {"ISFJ": 3, "ESFJ": 2, "INFJ": 1}
+    },
+    {
+        "question": "I value harmony and strive to create an ideal environment where everyone thrives.",
+        "weights": {"ESFJ": 3, "ENFJ": 2, "ISFP": 1}
+    },
+    {
+        "question": "I enjoy using creativity and innovation to reflect on and critique systems.",
+        "weights": {"ISTP": 3, "INTP": 2, "ENTP": 1}
+    },
+    {
+        "question": "I thrive in adventurous pursuits and feel alive when taking calculated risks.",
+        "weights": {"ESTP": 3, "ISTP": 2, "ENTP": 1}
+    },
+    {
+        "question": "I value artistic expression and appreciate exploring different ways to express myself.",
+        "weights": {"ISFP": 3, "INFP": 2, "ESFP": 1}
+    },
+    {
+        "question": "I feel energized in social settings and enjoy engaging with diverse groups of people.",
+        "weights": {"ESFP": 3, "ENFP": 2, "ESTP": 1}
+    },
+    {
+        "question": "I enjoy exploring abstract concepts and theoretical possibilities.",
+        "weights": {"ENFP": 3, "INTP": 2, "ENTP": 1}
+    },
+    {
+        "question": "I prefer taking a systematic and organized approach to achieving goals.",
+        "weights": {"ESTJ": 3, "ENTJ": 2, "ISTJ": 1}
+    },
+    {
+        "question": "I naturally understand others' emotions and work to maintain peaceful relationships.",
+        "weights": {"INFJ": 3, "ENFP": 2, "ESFJ": 1}
+    },
+    {
+        "question": "I enjoy spontaneous activities and making quick decisions based on immediate opportunities.",
+        "weights": {"ESTP": 3, "ESFP": 2, "ISFP": 1}
+    }
 ]
+
+
 
 # Personality descriptions
 personalities = {
